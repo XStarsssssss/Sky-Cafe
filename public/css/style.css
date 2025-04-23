@@ -43,7 +43,17 @@ header div:nth-child(2) ul li , header div:nth-child(3) ul li {
 }
 header div:nth-child(2) ul li:hover , header div:nth-child(3) ul li:hover{
   border: 1.5px solid white;
+  background-color: aliceblue;
+  
 }
+header a {
+  text-decoration: none;
+  color: aliceblue;
+}
+header div:nth-child(2) a:hover , header div:nth-child(3) a:hover{
+  color: black;
+}
+
 
 .section1{
   display: flex;
