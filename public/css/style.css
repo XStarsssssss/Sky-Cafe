@@ -110,14 +110,14 @@ header div:nth-child(2) a:hover , header div:nth-child(3) a:hover{
 .section2 h4{
   padding: 35px;
 }
-.section2 .container{
+.section2 .container  {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 20px 10px;
 }
-.section2 .container div{
+.section2 .container div {
   cursor: pointer;
   margin-top: 30px;
   background-color: rgb(0, 0, 0);
@@ -130,6 +130,10 @@ header div:nth-child(2) a:hover , header div:nth-child(3) a:hover{
   justify-content: space-between;
   align-items: center;
   transition: transfrom  0.3s;
+}
+.section2 a{
+  color: white;
+  text-decoration: none;
 }
 .section2 .container div:hover{
   transform: scale(1.04) ;

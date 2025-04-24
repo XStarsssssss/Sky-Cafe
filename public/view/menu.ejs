@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+    
+</head>
+<body>
+ <div class="body">
+  <header>
+    <div>
+      <img src="./image/SKy_CAFE.ico" alt="logo">
+    </div>
+  <div>
+    <ul>
+      <li><a href="#section2">Breakfast</a></li>
+
+        <li><a href="#section2">Lunch</a></li>
+        
+       <li><a href="#section3">Dinner</a></li>
+        
+         <li><a href="#section4">Drink</a></li>
+         <li><a href="#section4">Dessert</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li><a href="#">REVIEWS</a></li>
+      <li><a href="#">RATE</a></li>
+    </ul>
+  </div>
+
+
+</header>
+<hr>
+<div class="section2" id="section2">
+    <h1>Breakfast</h1>
+    <% menu.forEach(menu => { %>
+    <div class="container">
+      <div>
+        <img src="../image/<%= menu.food_image %>" alt=".">
+        <a  href="/food-details/<%= menu.food_name %>">
+        <h4><%= menu.food_name %></h4>
+    </a>
+      </div>
+      
+    </div>
+    <% }) %>
+   </div>
+
+ </div>
