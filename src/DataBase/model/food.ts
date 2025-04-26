@@ -1,6 +1,6 @@
 import { RowDataPacket } from 'mysql2';
 
-export interface menu extends RowDataPacket {
+export interface food extends RowDataPacket {
 id : number;
 food_name : string;
 food_image : string;

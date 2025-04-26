@@ -32,19 +32,28 @@
 
 </header>
 <hr>
+
 <div class="section2" id="section2">
-    <h1>Breakfast</h1>
-    <% menu.forEach(menu => { %>
+  
+    <h1>Menu</h1>
+    <% food.forEach(food => { %>
     <div class="container">
-      <div>
-        <img src="../image/<%= menu.food_image %>" alt=".">
-        <a  href="/food-details/<%= menu.food_name %>">
-        <h4><%= menu.food_name %></h4>
-    </a>
-      </div>
       
+      <div>
+        
+        <img src="../image/<%= food.food_image %>" alt=".">
+        <a  href="/food-details/<%= food.food_name %>">
+        <h4><%= food.food_name %></h4>
+    </a>
+    
+      </div>
+     
     </div>
     <% }) %>
    </div>
+   
+   
 
  </div>
+</body>
+</html>
