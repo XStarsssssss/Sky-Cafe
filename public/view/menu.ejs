@@ -5,7 +5,8 @@
     
 </head>
 <body>
- <div class="body">
+  
+ <div class="body-menu">
   <header>
     <div>
       <img src="./image/SKy_CAFE.ico" alt="logo">
@@ -33,23 +34,24 @@
 </header>
 <hr>
 
-<div class="section2" id="section2">
+<div class="menu" id="section2">
   
-    <h1>Menu</h1>
-    <% food.forEach(food => { %>
+  <h1>Menu</h1>
+  
     <div class="container">
-      
+      <% food.forEach(food => { %>
       <div>
-        
         <img src="../image/<%= food.food_image %>" alt=".">
         <a  href="/food-details/<%= food.food_name %>">
-        <h4><%= food.food_name %></h4>
+        <h4><%= food.food_name %></h4> 
     </a>
-    
       </div>
+      <% }) %>
+      
+
      
-    </div>
-    <% }) %>
+  </div>
+    
    </div>
    
    
