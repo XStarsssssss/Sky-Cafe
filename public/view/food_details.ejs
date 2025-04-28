@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+    
+</head>
+<body>
+  
+ <div class="body-details">
+  <header>
+    <div>
+      <img src="../image/SKy_CAFE.ico" alt="logo" id="logo-image">
+    </div>
+  <div>
+    <ul>
+      <li><a href="/menu">Back</a></li>
+    </ul>
+  </div>
+
+
+</header>
+<hr>
+<div class="food-details-container">
+    <% menu.forEach(food => { %>
+    <div class="food-image-section">
+        <img src="../image/<%= food.food_image %>" alt="<%= food.food_name %>">
+    </div>
+    <div class="food-info-section">
+        <h1 class="food-title"><%= food.food_name %></h1>
+        
+        <p class="food-description">
+            <%= food.food_description %>
+        </p>
+        <p class="food-price"><%= food.food_price %>KS</p>
+        <div class="radio-group">
+            <input type="radio" name="size" value="small"> <%= food.food_topic1 %>
+            <input type="radio" name="size" value="medium"> <%= food.food_topic2 %>
+            <input type="radio" name="size" value="large"> <%= food.food_topic3 %>
+          </div>
+        <button class="add-to-cart-button">Order</button>
+    </div>
+    
+    <% }) %>
+</div>
+
+
+
+   
+   
+
+ </div>
+
+ <script src="/JavaScript/script.js"></script>
+</body>
+</html>
