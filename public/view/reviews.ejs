@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+    
+</head>
+<div class="body">
+    <header>
+      <div>
+        <img src="./image/SKy_CAFE.ico" alt="logo" id="logo-image">
+      </div>
+    <div>
+      <ul>
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+  
+  
+  </header>
+  
+    <body class="bg-gray-100 font-inter">
+        <div class="container mx-auto p-6 sm:p-10 md:p-12 lg:p-16">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-600 text-center mb-8">
+                 Review
+            </h1>
+    
+            <div class="review-form-container">
+                <form id="review-form" class="review-form">
+                    <div class="form-group">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating:</label>
+                        <select id="rating" name="rating" required
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select Rating</option>
+                            <option value="5">★★★★★ (5 Stars)</option>
+                            <option value="4">★★★★ (4 Stars)</option>
+                            <option value="3">★★★ (3 Stars)</option>
+                            <option value="2">★★ (2 Stars)</option>
+                            <option value="1">★ (1 Star)</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="comment" class="block text-gray-700 text-sm font-bold mb-2">Your Review:</label>
+                        <textarea id="comment" name="comment" rows="4" placeholder="Write your review here" required
+                                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+    
+                    <button type="submit" class="submit-button">
+                        Submit Review
+                    </button>
+                </form>
+            </div>
+    
+            <div class="reviews-container">
+                <h2 class="reviews-header">Latest Reviews</h2>
+                <ul id="reviews-list" class="reviews-list">
+                </ul>
+                <p id="no-reviews-message" class="no-reviews-message">No reviews yet.</p>
+            </div>
+    
+            <div id="message-box" class="message-box hidden"></div>
+        </div>
+        </div>
+        <script src="/JavaScript/script.js"></script>
+    </body>
+    </html>
+    

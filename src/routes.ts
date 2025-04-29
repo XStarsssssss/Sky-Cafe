@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import {homepageGetHandler , FoodGetHandler, getFoodDetailsHandler} from './handler';
+import {homepageGetHandler , FoodGetHandler, getFoodDetailsHandler, ReviewGetHandler} from './handler';
 const router = Router();
 
 router.get('/menu', FoodGetHandler);
 router.get('/food-details/:foodName', getFoodDetailsHandler);
+router.get('/review', ReviewGetHandler);
 router.get('/', homepageGetHandler);
 
 

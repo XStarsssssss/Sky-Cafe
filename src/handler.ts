@@ -36,3 +36,6 @@ export const FoodGetHandler = async (req: Request, res: Response) => {
         res.status(500).send('Internal server error');
     }
   };
+  export const ReviewGetHandler = (_: Request, res: Response) => {
+    res.render('reviews');
+};
