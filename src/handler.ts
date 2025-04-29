@@ -29,7 +29,7 @@ export const FoodGetHandler = async (req: Request, res: Response) => {
         if (menudetails.length > 0) {
             res.render('food_details', { food_name: foodName, menu: menudetails });
         } else {
-            res.status(404).send('foodt not found');
+            res.status(404).send('food is not found');
         }
     } catch (error) {
         console.error('Error fetching artist details:', error);
