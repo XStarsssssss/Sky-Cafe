@@ -69,6 +69,38 @@ export const FoodGetHandler = async (req: Request, res: Response) => {
         res.status(500).send("Internal Server Error"); 
     }
 };
+
+export const getLunchMenu = async (req: Request, res: Response) => {
+    try {
+        const [rows] = await db.query<food[]>(`
+            SELECT
+                f.id AS food_id,
+                f.food_name,
+                f.food_image,
+                f.food_price,
+                f.food_topic1,
+                f.food_topic2,
+                f.food_topic3,
+                f.duration,
+                f.food_description,
+                m.id AS menu_id,
+                m.menu AS menu_name,
+                mi.id AS menu_item_id
+            FROM
+                food f
+            JOIN
+                menuitem mi ON f.id = mi.food_id
+            JOIN
+                menu m ON mi.menu_id = m.id
+                  WHERE m.menu = 'lunch' 
+        `);
+        const lunchFoodItems = rows; 
+        res.render('lunch', { lunchFoodItems }); 
+        } catch (error) {
+        console.error("Error fetching lunch menu:", error);
+        res.status(500).send("Internal Server Error"); 
+    }
+};
         
         
 

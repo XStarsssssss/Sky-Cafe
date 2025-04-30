@@ -15,7 +15,7 @@
     <ul>
       
 
-        <li><a href="/lunch">Lunch</a></li>
+        <li><a href="/breakfast">Breakfast</a></li>
         
        <li><a href="#section3">Dinner</a></li>
         
@@ -39,7 +39,7 @@
   <h1>Breakfast</h1>
   
     <div class="container">
-      <% breakfastFoodItems.forEach(item => { %>
+      <% lunchFoodItems.forEach(item => { %>
       <div>
         <img src="../image/<%= item.food_image %>" alt=".">
         <a  href="/food-details/<%= item.food_name %>">
@@ -57,7 +57,7 @@
    
 
  </div>
- <% if (breakfastFoodItems.length === 0) { %>
+ <% if (lunchFoodItems.length === 0) { %>
     <p>No breakfast items found matching the criteria.</p>
 <% } %>
  <script src="/JavaScript/script.js"></script>
