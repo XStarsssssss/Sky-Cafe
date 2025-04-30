@@ -15,11 +15,11 @@
     <ul>
       
 
-        <li><a href="#section2">Lunch</a></li>
+        <li><a href="/breakfast">Breakfast</a></li>
         
-       <li><a href="#section3">Dinner</a></li>
+       <li><a href="#section3">Lunch</a></li>
         
-         <li><a href="#section4">Drink</a></li>
+         <li><a href="#section4">Dinner</a></li>
          <li><a href="#section4">Dessert</a></li>
     </ul>
   </div>
@@ -36,10 +36,10 @@
 
 <div class="menu" id="section2">
   
-  <h1>Breakfast</h1>
+  <h1>Drink</h1>
   
     <div class="container">
-      <% breakfastFoodItems.forEach(item => { %>
+      <% drinkItems.forEach(item => { %>
       <div>
         <img src="../image/<%= item.food_image %>" alt=".">
         <a  href="/food-details/<%= item.food_name %>">
@@ -57,8 +57,8 @@
    
 
  </div>
- <% if (breakfastFoodItems.length === 0) { %>
-    <p>No breakfast items found matching the criteria.</p>
+ <% if (drinkItems.length === 0) { %>
+    <p>No drink items found matching the criteria.</p>
 <% } %>
  <script src="/JavaScript/script.js"></script>
 </body>

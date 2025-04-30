@@ -60,7 +60,7 @@ export const FoodGetHandler = async (req: Request, res: Response) => {
                 menuitem mi ON f.id = mi.food_id
             JOIN
                 menu m ON mi.menu_id = m.id
-            WHERE m.menu = 'breakfast' AND f.id = mi.menu_id
+                  WHERE m.menu = 'breakfast' 
         `);
         const breakfastFoodItems = rows; 
         res.render('breakfast', { breakfastFoodItems }); 
@@ -94,12 +94,11 @@ export const getDrinksMenu = async (req: Request, res: Response) => {
                 menuitem mi ON f.id = mi.food_id
             JOIN
                 menu m ON mi.menu_id = m.id
-            WHERE
-                m.menu = 'breakfast' AND f.id = mi.menu_id AND f.food_topic1 = 'drink'
+                  WHERE m.menu = 'drink'
         `);
 
         const drinkItems = rows;
-        res.render('drink', { breakfastFoodItems: drinkItems });
+        res.render('drink', { drinkItems });
     } catch (error) {
         console.error("Error fetching drinks menu:", error);
         res.status(500).send("Internal Server Error");
