@@ -101,6 +101,38 @@ export const getLunchMenu = async (req: Request, res: Response) => {
         res.status(500).send("Internal Server Error"); 
     }
 };
+
+export const getDinnerMenu = async (req: Request, res: Response) => {
+    try {
+        const [rows] = await db.query<food[]>(`
+            SELECT
+                f.id AS food_id,
+                f.food_name,
+                f.food_image,
+                f.food_price,
+                f.food_topic1,
+                f.food_topic2,
+                f.food_topic3,
+                f.duration,
+                f.food_description,
+                m.id AS menu_id,
+                m.menu AS menu_name,
+                mi.id AS menu_item_id
+            FROM
+                food f
+            JOIN
+                menuitem mi ON f.id = mi.food_id
+            JOIN
+                menu m ON mi.menu_id = m.id
+                  WHERE m.menu = 'dinner' 
+        `);
+        const dinnerFoodItems = rows; 
+        res.render('dinner', { dinnerFoodItems }); 
+        } catch (error) {
+        console.error("Error fetching lunch menu:", error);
+        res.status(500).send("Internal Server Error"); 
+    }
+};
         
         
 
@@ -129,10 +161,43 @@ export const getDrinksMenu = async (req: Request, res: Response) => {
                   WHERE m.menu = 'drink'
         `);
 
-        const drinkItems = rows;
-        res.render('drink', { drinkItems });
+        const drinkFoodItems = rows;
+        res.render('drink', { drinkFoodItems });
     } catch (error) {
         console.error("Error fetching drinks menu:", error);
+        res.status(500).send("Internal Server Error");
+    }
+};
+
+export const getDessertMenu = async (req: Request, res: Response) => {
+    try {
+        const [rows] = await db.query<food[]>(`
+            SELECT
+                f.id AS food_id,
+                f.food_name,
+                f.food_image,
+                f.food_price,
+                f.food_topic1,
+                f.food_topic2,
+                f.food_topic3,
+                f.duration,
+                f.food_description,
+                m.id AS menu_id,
+                m.menu AS menu_name,
+                mi.id AS menu_item_id
+            FROM
+                food f
+            JOIN
+                menuitem mi ON f.id = mi.food_id
+            JOIN
+                menu m ON mi.menu_id = m.id
+                  WHERE m.menu = 'dessert'
+        `);
+
+        const dessertFoodItems = rows;
+        res.render('dessert', { dessertFoodItems });
+    } catch (error) {
+        console.error("Error fetching dessert menu:", error);
         res.status(500).send("Internal Server Error");
     }
 };
